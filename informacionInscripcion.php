@@ -1,12 +1,13 @@
 <?php
-$Documento = "1014277079";
-$ConfirmarDocumento = "1014277079";
-$Nombres = "Brian Alexis";
-$Apellidos = "Cardenas Castañeda";
-$Correo = "Correo@ejemplo.com";
-$ConfirmarCorreo = "Correo@ejemplo.com";
-$Pais = "Colombia";
-$Departamento = "Bogota";
+
+$Datos = array('Documento'=>$_POST['Documento'], 'ConfirmarDocumento' => $_POST['ConfirmarDocumento'], 'Nombres' => $_POST['Nombres'], 'Apellidos' => $_POST['Apellidos'], 'Correo' => $_POST['Correo'],'ConfirmarCorreo' => $_POST['ConfirmarCorreo'], 'Pais' => $_POST['Pais'], 'Departamento' => $_POST['Departamento'], 'Ciudad' => $_POST['Ciudad'], 'Edad' => $_POST['Edad'], 'Dirección' => $_POST['Dirección'], 'Telefono' => $_POST['Telefono'], 'Diplomado' => $_POST['Diplomado'], 'Informacion' => $_POST['Informacion'], 'Genero' => $_POST['Genero'], 'PoliticaUno' => $_POST['PoliticaUno'], 'PoliticaDos' => $_POST['PoliticaDos']);
+
+/*
+foreach ($Datos as $key => $value) {
+	echo $key. " ". $value;
+}
+*/
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@ $Departamento = "Bogota";
         </section>
         <section>
         	<?php
-        	if($Documento == $ConfirmarDocumento && $Correo == $ConfirmarCorreo){ 
+        	if($Datos['Documento'] == $Datos['ConfirmarDocumento'] && $Datos['Correo'] == $Datos['ConfirmarCorreo']){ 
         		?>
 	        	<div class="contenedor">
 	        		<table border="3">
@@ -56,38 +57,22 @@ $Departamento = "Bogota";
 		        			</tr>
 		        		</thead>
 		        		<tbody>
-		        			<tr>
-		        				<th>Documento</th>
-		        				<td><?php echo $Documento; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Confirmar Documento</th>
-		        				<td><?php echo $ConfirmarDocumento; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Nombres</th>
-		        				<td><?php echo $Nombres; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Apellidos</th>
-		        				<td><?php echo $Apellidos; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Correo</th>
-		        				<td><?php echo $Correo; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Confirmar Correo</th>
-		        				<td><?php echo $ConfirmarCorreo; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Pais</th>
-		        				<td><?php echo $Pais; ?> </td>
-		        			</tr>
-		        			<tr>
-		        				<th>Departamento</th>
-		        				<td><?php echo $Departamento; ?> </td>
-		        			</tr>
+                            <?php
+                            for($i=0; $i<count($Datos)-2; $i++){
+                            ?>
+                            <tr>
+                            <?php
+                                 for($j=0; $j <1; $j++){
+                                    ?>
+                                    <td> <?php echo array_keys($Datos)[$i];?></td>
+                                    <td> <?php echo array_values($Datos)[$i];?></td>
+                                    <?php
+                                }
+                            ?>
+                            </tr>
+                            <?php
+                            }
+                            ?>
 		        		</tbody>
 		        	</table>
 	        	</div>
