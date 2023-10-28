@@ -3,6 +3,11 @@
   justify-content: center;
 }
 
+
+.heading {
+  color: #0000FF;
+}
+
 table {
 
   margin: 40px 40px;
@@ -19,3 +24,5 @@ th {
   border: 1px solid black;
   padding: 8px 15px;
 }
+
+

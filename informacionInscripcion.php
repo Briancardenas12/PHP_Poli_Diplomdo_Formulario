@@ -79,7 +79,9 @@ foreach ($Datos as $key => $value) {
         		<?php
         		}
         		else{
-        			echo "No son iguales";
+                ?>
+                <h1 class="heading">DATOS INCORRECTOS</h1>
+                <?php
         		}
         		?>
         </section>
