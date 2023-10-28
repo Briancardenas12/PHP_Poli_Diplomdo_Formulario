@@ -72,6 +72,10 @@ form legend {
   transform: scale(1.2);
 }
 
+.tituloSecundario {
+  color: #FF0000;
+}
+
 footer {
   text-align: center;
   background: url(img/bg.jpg);
@@ -83,4 +87,5 @@ footer {
   font-size: 13px;
   margin: 20px;
 }
+
 
